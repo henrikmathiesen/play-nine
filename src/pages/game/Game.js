@@ -34,22 +34,25 @@ class Game extends Component {
     }
 
     render() {
+        let selectedNumbers = this.state.selectedNumbers;
+        let numberOfStars = this.state.numberOfStars;
+
         return (
             <div>
                 <div className="row">
                     <div className="col-md-5">
-                        <StarsFrame numberOfStars={this.state.numberOfStars} />
+                        <StarsFrame numberOfStars={numberOfStars} />
                     </div>
                     <div className="col-md-2">
-                        <ButtonFrame />
+                        <ButtonFrame selectedNumbers={selectedNumbers} />
                     </div>
                     <div className="col-md-5">
-                        <AnswerFrame selectedNumbers={this.state.selectedNumbers} onUnSelectNumber={this.handleUnSelectNumber} />
+                        <AnswerFrame selectedNumbers={selectedNumbers} onUnSelectNumber={this.handleUnSelectNumber} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <NumbersFrame selectedNumbers={this.state.selectedNumbers} onSelectNumber={this.handleSelectNumber} />
+                        <NumbersFrame selectedNumbers={selectedNumbers} onSelectNumber={this.handleSelectNumber} />
                     </div>
                 </div>
             </div>
