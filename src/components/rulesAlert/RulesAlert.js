@@ -22,7 +22,7 @@ class RulesAlert extends Component {
         let buttonClasses = this.state.isVisible ? 'glyphicon glyphicon-chevron-up' : 'glyphicon glyphicon-chevron-down'; 
 
         return(
-            <div className={alertClasses}>
+            <div id="rules-alert" className={alertClasses}>
                 <button type="button" className="close" onClick={this.handleCollapse}><span className={buttonClasses}></span></button>
                 <div className="text-center">
                     <h2 className="text-uppercase"><strong>Rules</strong></h2>
