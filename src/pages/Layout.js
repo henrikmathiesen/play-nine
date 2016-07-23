@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/header/Header';
 import RulesAlert from '../components/rulesAlert/RulesAlert';
 import Game from './game/Game';
+import './layout.css';
 
 class Layout extends Component {
   render() {

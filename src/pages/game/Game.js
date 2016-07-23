@@ -7,9 +7,13 @@ class Game extends Component {
     render() {
         return (
             <div className="row">
-                <div className="col-md-12">
+                <div className="col-md-5">
                     <StarsFrame />
+                </div>
+                <div className="col-md-2">
                     <ButtonFrame />
+                </div>
+                <div className="col-md-5">
                     <AnswerFrame />
                 </div>
             </div>
