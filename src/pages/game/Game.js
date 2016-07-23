@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'underscore';
 import StarsFrame from '../../components/starsFrame/StarsFrame';
 import ButtonFrame from '../../components/buttonFrame/ButtonFrame';
 import AnswerFrame from '../../components/answerFrame/AnswerFrame';
@@ -12,6 +13,7 @@ class Game extends Component {
         this.handleSelectNumber = this.handleSelectNumber.bind(this);
 
         this.state = {
+            numberOfStars: _.random(1, 9),
             selectedNumbers: []
         };
     }
@@ -28,7 +30,7 @@ class Game extends Component {
             <div>
                 <div className="row">
                     <div className="col-md-5">
-                        <StarsFrame />
+                        <StarsFrame numberOfStars={this.state.numberOfStars} />
                     </div>
                     <div className="col-md-2">
                         <ButtonFrame />
