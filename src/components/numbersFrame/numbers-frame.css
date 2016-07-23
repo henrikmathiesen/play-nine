@@ -1,3 +1,14 @@
 #numbers-frame {
     margin-top:20px;
 }
+
+#numbers-frame .number {
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 8px;
+    width:50px;
+    text-align: center;
+    font-size: 35px;
+    border-radius: 50%;
+    background-color: #bbb;
+}
