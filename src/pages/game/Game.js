@@ -20,7 +20,8 @@ class Game extends Component {
             numberOfStars: _.random(1, 9),
             selectedNumbers: [],
             usedNumbers: [],
-            correct: null
+            correct: null,
+            redrawCount: 5
         };
     }
 
@@ -35,8 +36,8 @@ class Game extends Component {
     }
 
     handleUnSelectNumber(unSelectedNumber) {
-        var selectedNumbersCopy = this.state.selectedNumbers;
-        var unSelectedNumberIndex = selectedNumbersCopy.indexOf(unSelectedNumber);
+        let selectedNumbersCopy = this.state.selectedNumbers;
+        let unSelectedNumberIndex = selectedNumbersCopy.indexOf(unSelectedNumber);
         selectedNumbersCopy.splice(unSelectedNumberIndex, 1);
 
         this.setState({
@@ -46,17 +47,17 @@ class Game extends Component {
     }
 
     handlecheckAnswer() {
-        var selectedNumbersSum = 0;
-        for (var index = 0; index < this.state.selectedNumbers.length; index++) {
+        let selectedNumbersSum = 0;
+        for (let index = 0; index < this.state.selectedNumbers.length; index++) {
             selectedNumbersSum += this.state.selectedNumbers[index];
         }
 
-        var correct = selectedNumbersSum === this.state.numberOfStars;
+        let correct = selectedNumbersSum === this.state.numberOfStars;
         this.setState({ correct: correct });
     }
 
     handleAcceptAnswer() {
-        var usedNumbers = this.state.usedNumbers.concat(this.state.selectedNumbers);
+        let usedNumbers = this.state.usedNumbers.concat(this.state.selectedNumbers);
 
         this.setState({
             numberOfStars: _.random(1, 9),
@@ -67,11 +68,16 @@ class Game extends Component {
     }
 
     handleRedraw() {
-        this.setState({
-            numberOfStars: _.random(1, 9),
-            correct: null,
-            selectedNumbers: []
-        });
+        let redrawCount = this.state.redrawCount;
+
+        if(redrawCount > 0) {
+            this.setState({
+                numberOfStars: _.random(1, 9),
+                correct: null,
+                selectedNumbers: [],
+                redrawCount: redrawCount - 1
+            });
+        }
     }
 
     render() {
@@ -79,6 +85,7 @@ class Game extends Component {
         let usedNumbers = this.state.usedNumbers;
         let numberOfStars = this.state.numberOfStars;
         let correct = this.state.correct;
+        let redrawCount = this.state.redrawCount;
 
         return (
             <div>
@@ -87,7 +94,7 @@ class Game extends Component {
                         <StarsFrame numberOfStars={numberOfStars} />
                     </div>
                     <div className="col-md-2">
-                        <ButtonFrame selectedNumbers={selectedNumbers} correct={correct} onCheckAnswer={this.handlecheckAnswer} onAcceptAnswer={this.handleAcceptAnswer} onRedraw={this.handleRedraw} />
+                        <ButtonFrame selectedNumbers={selectedNumbers} correct={correct} onCheckAnswer={this.handlecheckAnswer} onAcceptAnswer={this.handleAcceptAnswer} onRedraw={this.handleRedraw} redrawCount={redrawCount} />
                     </div>
                     <div className="col-md-5">
                         <AnswerFrame selectedNumbers={selectedNumbers} onUnSelectNumber={this.handleUnSelectNumber} />
