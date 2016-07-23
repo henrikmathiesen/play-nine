@@ -23,7 +23,7 @@ class ButtonFrame extends Component {
             <div id="button-frame">
                 <div className="buttons">
                     {button}
-                    <button className="btn btn-warning btn-block">
+                    <button className="btn btn-warning btn-block" onClick={this.props.onRedraw}>
                         <span className="glyphicon glyphicon-refresh"></span>
                         <span className="redraws"> 1 / 5</span>
                     </button>
