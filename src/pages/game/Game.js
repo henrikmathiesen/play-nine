@@ -11,6 +11,7 @@ class Game extends Component {
         super();
 
         this.handleSelectNumber = this.handleSelectNumber.bind(this);
+        this.handleUnSelectNumber = this.handleUnSelectNumber.bind(this);
 
         this.state = {
             numberOfStars: _.random(1, 9),
@@ -25,6 +26,13 @@ class Game extends Component {
         }
     }
 
+    handleUnSelectNumber(unSelectedNumber) {
+        var selectedNumbersCopy = this.state.selectedNumbers;
+        var unSelectedNumberIndex = selectedNumbersCopy.indexOf(unSelectedNumber);
+        selectedNumbersCopy.splice(unSelectedNumberIndex, 1);
+        this.setState({ selectedNumbers: selectedNumbersCopy });
+    }
+
     render() {
         return (
             <div>
@@ -36,7 +44,7 @@ class Game extends Component {
                         <ButtonFrame />
                     </div>
                     <div className="col-md-5">
-                        <AnswerFrame selectedNumbers={this.state.selectedNumbers} />
+                        <AnswerFrame selectedNumbers={this.state.selectedNumbers} onUnSelectNumber={this.handleUnSelectNumber} />
                     </div>
                 </div>
                 <div className="row">

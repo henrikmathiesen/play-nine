@@ -7,10 +7,13 @@ class AnswerFrame extends Component {
         let numbers = [];
 
         for (var index = 0; index < this.props.selectedNumbers.length; index++) {
-            numbers.push(<div key={index} className="number">{this.props.selectedNumbers[index]}</div>);
+            numbers.push(<div key={index} className="number"
+                onClick={this.props.onUnSelectNumber.bind(null, this.props.selectedNumbers[index])}>
+                {this.props.selectedNumbers[index]}
+            </div>);
         }
 
-        return(
+        return (
             <div id="answer-frame" className="well well-lg">
                 {numbers}
             </div>
