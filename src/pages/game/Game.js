@@ -5,6 +5,21 @@ import AnswerFrame from '../../components/answerFrame/AnswerFrame';
 import NumbersFrame from '../../components/numbersFrame/NumbersFrame';
 
 class Game extends Component {
+
+    constructor() {
+        super();
+
+        this.handleSelectNumber = this.handleSelectNumber.bind(this);
+
+        this.state = {
+            selectedNumbers: []
+        };
+    }
+
+    handleSelectNumber(selectedNumber){
+        this.setState({ selectedNumbers: this.state.selectedNumbers.concat(selectedNumber) });
+    }
+
     render() {
         return (
             <div>
@@ -16,12 +31,12 @@ class Game extends Component {
                         <ButtonFrame />
                     </div>
                     <div className="col-md-5">
-                        <AnswerFrame />
+                        <AnswerFrame selectedNumbers={this.state.selectedNumbers} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <NumbersFrame />
+                        <NumbersFrame selectedNumbers={this.state.selectedNumbers} onSelectNumber={this.handleSelectNumber} />
                     </div>
                 </div>
             </div>

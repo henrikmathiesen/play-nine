@@ -13,3 +13,9 @@
     background-color: #bbb;
     cursor:pointer;
 }
+
+#numbers-frame .number.selected {
+    cursor:not-allowed;
+    background-color: #ddd;
+    color:#bbb;
+}

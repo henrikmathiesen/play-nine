@@ -10,7 +10,7 @@ class RulesAlert extends Component {
 
         this.state = {
             isVisible: true
-        }
+        };
     }
 
     handleCollapse(){
