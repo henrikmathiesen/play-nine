@@ -1,3 +1,7 @@
+#stars-frame {
+    height: 150px;
+}
+
 #stars-frame .glyphicon-star {
     font-size: 48px;
 }

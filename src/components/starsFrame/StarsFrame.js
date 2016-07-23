@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './starsFrame.css';
+import './stars-frame.css';
 
 class StarsFrame extends Component {
     render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './rulesAlert.css';
+import './rules-alert.css';
 
 class RulesAlert extends Component {
 
