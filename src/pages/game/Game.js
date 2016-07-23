@@ -12,17 +12,22 @@ class Game extends Component {
 
         this.handleSelectNumber = this.handleSelectNumber.bind(this);
         this.handleUnSelectNumber = this.handleUnSelectNumber.bind(this);
+        this.handlecheckAnswer = this.handlecheckAnswer.bind(this);
 
         this.state = {
             numberOfStars: _.random(1, 9),
-            selectedNumbers: []
+            selectedNumbers: [],
+            correct: null
         };
     }
 
     handleSelectNumber(selectedNumber){
         if(this.state.selectedNumbers.indexOf(selectedNumber) < 0) {
             // selectedNumber is not in selectedNumbers, ok to select it
-            this.setState({ selectedNumbers: this.state.selectedNumbers.concat(selectedNumber) });
+            this.setState({ 
+                selectedNumbers: this.state.selectedNumbers.concat(selectedNumber),
+                correct: null 
+            });
         }
     }
 
@@ -30,12 +35,26 @@ class Game extends Component {
         var selectedNumbersCopy = this.state.selectedNumbers;
         var unSelectedNumberIndex = selectedNumbersCopy.indexOf(unSelectedNumber);
         selectedNumbersCopy.splice(unSelectedNumberIndex, 1);
-        this.setState({ selectedNumbers: selectedNumbersCopy });
+        this.setState({ 
+            selectedNumbers: selectedNumbersCopy,
+            correct: null 
+        });
+    }
+
+    handlecheckAnswer(){
+        var selectedNumbersSum = 0;
+        for (var index = 0; index < this.state.selectedNumbers.length; index++) {
+            selectedNumbersSum += this.state.selectedNumbers[index];
+        }
+
+        var correct = selectedNumbersSum === this.state.numberOfStars;
+        this.setState({ correct: correct });
     }
 
     render() {
         let selectedNumbers = this.state.selectedNumbers;
         let numberOfStars = this.state.numberOfStars;
+        let correct = this.state.correct;
 
         return (
             <div>
@@ -44,7 +63,7 @@ class Game extends Component {
                         <StarsFrame numberOfStars={numberOfStars} />
                     </div>
                     <div className="col-md-2">
-                        <ButtonFrame selectedNumbers={selectedNumbers} />
+                        <ButtonFrame selectedNumbers={selectedNumbers} correct={correct} onCheckAnswer={this.handlecheckAnswer} />
                     </div>
                     <div className="col-md-5">
                         <AnswerFrame selectedNumbers={selectedNumbers} onUnSelectNumber={this.handleUnSelectNumber} />

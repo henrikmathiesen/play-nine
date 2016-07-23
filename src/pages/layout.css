@@ -1,3 +1,7 @@
 .well {
     margin:0;
 }
+
+button {
+    outline: 0;
+}
