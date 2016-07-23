@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import './header.css';
 
 class Header extends Component {
-    render(){
-        return(
-            <h1>Play Nine</h1>
+    render() {
+        return (
+            <header className="row">
+                <div className="col-md-12 text-center">
+                    <h1>Play Nine</h1>
+                </div>
+            </header>
         );
     }
 }
