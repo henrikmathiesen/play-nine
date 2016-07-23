@@ -6,7 +6,7 @@ class RulesAlert extends Component {
     constructor(){
         super();
 
-        this.handleClose = this.handleClose.bind(this);
+        this.handleCollapse = this.handleCollapse.bind(this);
 
         this.state = {
             isVisible: true
