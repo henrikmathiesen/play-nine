@@ -17,7 +17,10 @@ class Game extends Component {
     }
 
     handleSelectNumber(selectedNumber){
-        this.setState({ selectedNumbers: this.state.selectedNumbers.concat(selectedNumber) });
+        if(this.state.selectedNumbers.indexOf(selectedNumber) < 0) {
+            // selectedNumber is not in selectedNumbers, ok to select it
+            this.setState({ selectedNumbers: this.state.selectedNumbers.concat(selectedNumber) });
+        }
     }
 
     render() {
