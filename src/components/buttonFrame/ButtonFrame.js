@@ -8,21 +8,27 @@ class ButtonFrame extends Component {
 
         switch (this.props.correct) {
             case true:
-                button = <button id="button-frame" className="btn btn-success btn-block" onClick={this.props.onAcceptAnswer}><span className="glyphicon glyphicon-ok"></span></button>
+                button = <button className="btn btn-success btn-block" onClick={this.props.onAcceptAnswer}><span className="glyphicon glyphicon-ok"></span></button>
                 break;
             case false:
-                button = <button id="button-frame" className="btn btn-danger btn-block"><span className="glyphicon glyphicon-remove"></span></button>
+                button = <button className="btn btn-danger btn-block"><span className="glyphicon glyphicon-remove"></span></button>
                 break;
             default:
                 isDisabled = this.props.selectedNumbers.length < 1;
-                button = <button id="button-frame" className="btn btn-warning btn-block" disabled={isDisabled} onClick={this.props.onCheckAnswer}>=</button>; 
+                button = <button className="btn btn-primary btn-block" disabled={isDisabled} onClick={this.props.onCheckAnswer}>=</button>; 
                 break;
         } 
 
         return (
-            <span>
-                {button}
-            </span>
+            <div id="button-frame">
+                <div className="buttons">
+                    {button}
+                    <button className="btn btn-warning btn-block">
+                        <span className="glyphicon glyphicon-refresh"></span>
+                        <span className="redraws"> 1 / 5</span>
+                    </button>
+                </div>
+            </div>
         );
     }
 }

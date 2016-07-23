@@ -1,4 +1,27 @@
 #button-frame {
-    height: 100px;
-    margin-top:25px;
+    height: 150px;
+    position: relative;
+}
+
+#button-frame .buttons {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -57px;
+}
+
+#button-frame .btn-success,
+#button-frame .btn-danger,
+#button-frame .btn-primary {
+    height: 75px;
+}
+
+#button-frame .btn-warning {
+    height: 34px;
+}
+
+#button-frame .redraws {
+    position: relative;
+    top: -1px;
+    left: 4px;
 }
