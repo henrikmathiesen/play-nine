@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'underscore';
+import Utils from '../../utils/Utils';
 import StarsFrame from '../../components/starsFrame/StarsFrame';
 import ButtonFrame from '../../components/buttonFrame/ButtonFrame';
 import AnswerFrame from '../../components/answerFrame/AnswerFrame';
@@ -17,7 +17,7 @@ class Game extends Component {
         this.handleRedraw = this.handleRedraw.bind(this);
 
         this.state = {
-            numberOfStars: _.random(1, 9),
+            numberOfStars: Utils.randomNumber(),
             selectedNumbers: [],
             usedNumbers: [],
             correct: null,
@@ -60,7 +60,7 @@ class Game extends Component {
         let usedNumbers = this.state.usedNumbers.concat(this.state.selectedNumbers);
 
         this.setState({
-            numberOfStars: _.random(1, 9),
+            numberOfStars: Utils.randomNumber(),
             selectedNumbers: [],
             usedNumbers: usedNumbers,
             correct: null
@@ -72,7 +72,7 @@ class Game extends Component {
 
         if(redrawCount > 0) {
             this.setState({
-                numberOfStars: _.random(1, 9),
+                numberOfStars: Utils.randomNumber(),
                 correct: null,
                 selectedNumbers: [],
                 redrawCount: redrawCount - 1
