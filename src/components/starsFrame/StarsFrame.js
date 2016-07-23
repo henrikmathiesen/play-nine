@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import _ from 'underscore';
 import './stars-frame.css';
 
 class StarsFrame extends Component {
     render() {
-        let numberOfStars = 5;
+        let numberOfStars = _.random(1, 9);
         let stars = [];
 
         for (var index = 0; index < numberOfStars; index++) {
