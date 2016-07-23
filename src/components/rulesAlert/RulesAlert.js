@@ -1,10 +1,29 @@
 import React, { Component } from 'react';
+import './rulesAlert.css';
 
 class RulesAlert extends Component {
+
+    constructor(){
+        super();
+
+        this.handleClose = this.handleClose.bind(this);
+
+        this.state = {
+            isVisible: true
+        }
+    }
+
+    handleCollapse(){
+        this.setState({ isVisible: !this.state.isVisible });
+    }
+
     render(){
+        let alertClasses = 'alert alert-success alert-dismissible' + (!this.state.isVisible ? ' alert-collpase' : '');
+        let buttonClasses = this.state.isVisible ? 'glyphicon glyphicon-chevron-up' : 'glyphicon glyphicon-chevron-down'; 
+
         return(
-            <div className="alert alert-success alert-dismissible">
-                <button type="button" className="close"><span>&times;</span></button>
+            <div className={alertClasses}>
+                <button type="button" className="close" onClick={this.handleCollapse}><span className={buttonClasses}></span></button>
                 <div className="text-center">
                     <h2 className="text-uppercase"><strong>Rules</strong></h2>
                     <hr />
