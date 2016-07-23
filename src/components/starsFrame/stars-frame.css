@@ -6,6 +6,7 @@
     font-size: 48px;
 }
 
-#stars-frame .glyphicon-star + .glyphicon-star {
-    margin-left: 20px;
+#stars-frame .glyphicon-star {
+    margin-left: 8px;
+    margin-right: 8px;
 }
