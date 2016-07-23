@@ -13,20 +13,22 @@ class Game extends Component {
         this.handleSelectNumber = this.handleSelectNumber.bind(this);
         this.handleUnSelectNumber = this.handleUnSelectNumber.bind(this);
         this.handlecheckAnswer = this.handlecheckAnswer.bind(this);
+        this.handleAcceptAnswer = this.handleAcceptAnswer.bind(this);
 
         this.state = {
             numberOfStars: _.random(1, 9),
             selectedNumbers: [],
+            usedNumbers: [],
             correct: null
         };
     }
 
-    handleSelectNumber(selectedNumber){
-        if(this.state.selectedNumbers.indexOf(selectedNumber) < 0) {
+    handleSelectNumber(selectedNumber) {
+        if (this.state.selectedNumbers.indexOf(selectedNumber) < 0) {
             // selectedNumber is not in selectedNumbers, ok to select it
-            this.setState({ 
+            this.setState({
                 selectedNumbers: this.state.selectedNumbers.concat(selectedNumber),
-                correct: null 
+                correct: null
             });
         }
     }
@@ -35,13 +37,14 @@ class Game extends Component {
         var selectedNumbersCopy = this.state.selectedNumbers;
         var unSelectedNumberIndex = selectedNumbersCopy.indexOf(unSelectedNumber);
         selectedNumbersCopy.splice(unSelectedNumberIndex, 1);
-        this.setState({ 
+        
+        this.setState({
             selectedNumbers: selectedNumbersCopy,
-            correct: null 
+            correct: null
         });
     }
 
-    handlecheckAnswer(){
+    handlecheckAnswer() {
         var selectedNumbersSum = 0;
         for (var index = 0; index < this.state.selectedNumbers.length; index++) {
             selectedNumbersSum += this.state.selectedNumbers[index];
@@ -51,8 +54,20 @@ class Game extends Component {
         this.setState({ correct: correct });
     }
 
+    handleAcceptAnswer() {
+        var usedNumbers = this.state.usedNumbers.concat(this.state.selectedNumbers);
+
+        this.setState({
+            numberOfStars: _.random(1, 9),
+            selectedNumber: [],
+            usedNumbers: usedNumbers,
+            correct: null
+        });
+    }
+
     render() {
         let selectedNumbers = this.state.selectedNumbers;
+        let usedNumbers = this.state.usedNumbers;
         let numberOfStars = this.state.numberOfStars;
         let correct = this.state.correct;
 
@@ -63,7 +78,7 @@ class Game extends Component {
                         <StarsFrame numberOfStars={numberOfStars} />
                     </div>
                     <div className="col-md-2">
-                        <ButtonFrame selectedNumbers={selectedNumbers} correct={correct} onCheckAnswer={this.handlecheckAnswer} />
+                        <ButtonFrame selectedNumbers={selectedNumbers} correct={correct} onCheckAnswer={this.handlecheckAnswer} onAcceptAnswer={this.handleAcceptAnswer} />
                     </div>
                     <div className="col-md-5">
                         <AnswerFrame selectedNumbers={selectedNumbers} onUnSelectNumber={this.handleUnSelectNumber} />
@@ -71,7 +86,7 @@ class Game extends Component {
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <NumbersFrame selectedNumbers={selectedNumbers} onSelectNumber={this.handleSelectNumber} />
+                        <NumbersFrame selectedNumbers={selectedNumbers} usedNumbers={usedNumbers} onSelectNumber={this.handleSelectNumber} />
                     </div>
                 </div>
             </div>

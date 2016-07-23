@@ -19,3 +19,10 @@
     background-color: #ddd;
     color:#bbb;
 }
+
+#numbers-frame .number.used {
+    cursor:not-allowed;
+    background-color: #5cb85c;
+    color:#fff;
+    opacity: 0.5;
+}
