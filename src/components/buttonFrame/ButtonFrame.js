@@ -29,7 +29,7 @@ class ButtonFrame extends Component {
 
         return (
             <div id="button-frame">
-                <div className="buttons rows">
+                <div className="buttons row">
                     <div className="col-md-12 col-sm-8 col-xs-8">
                         {button}
                     </div>

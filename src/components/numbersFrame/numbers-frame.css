@@ -23,9 +23,14 @@
     opacity: 0.5;
 }
 
-@media (max-width:400px) { 
-    #numbers-frame .number {
-        margin-top:2px;
-        margin-bottom: 2px;
+
+#numbers-frame .number {
+    margin-top:2px;
+    margin-bottom: 2px;
+}
+
+@media (min-width:992px) { 
+    #numbers-frame {
+        margin-top:15px;
     }
 }
