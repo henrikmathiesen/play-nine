@@ -10,6 +10,12 @@
 }
 
 @media (min-width:992px) {
+
+    #button-frame {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
     #button-frame .btn-success,
     #button-frame .btn-danger,
     #button-frame .btn-primary {
@@ -23,7 +29,7 @@
 
     #button-frame .buttons {
         position: relative;
-        top:16px;
+        top:18px;
     }
 
     #button-frame .buttons > div {

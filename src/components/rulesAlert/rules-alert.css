@@ -1,3 +1,7 @@
+#rules-alert {
+    margin-bottom:10px;
+}
+
 #rules-alert.alert-collpase {
     height: 40px;
     overflow: hidden;
@@ -15,7 +19,7 @@
 
 @media (min-width:992px) { 
     #rules-alert {
-        margin-bottom:15px;
+        margin-bottom:30px;
     }
 
     #rules-alert h2 {

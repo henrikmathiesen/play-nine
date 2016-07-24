@@ -1,3 +1,9 @@
 .bottom-frame {
-    margin-top:20px;
+    margin-top:5px;
+}
+
+@media (min-width:992px) { 
+    .bottom-frame {
+        margin-top:15px;
+    }
 }

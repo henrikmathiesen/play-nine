@@ -1,7 +1,3 @@
-#answer-frame {
-    height: 150px;
-}
-
 #answer-frame .number {
     display: inline-block;
     margin-left: 8px;
@@ -12,4 +8,10 @@
     border-radius: 50%;
     background-color: #bbb;
     cursor:pointer;
+}
+
+@media (min-width:992px) { 
+    #answer-frame {
+        height: 150px;
+    }
 }
