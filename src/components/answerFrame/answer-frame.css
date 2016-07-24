@@ -1,3 +1,7 @@
+#answer-frame {
+    text-align: center;
+}
+
 #answer-frame .number {
     display: inline-block;
     margin-left: 8px;
@@ -10,8 +14,14 @@
     cursor:pointer;
 }
 
+#answer-frame .number {
+    margin-top:2px;
+    margin-bottom: 2px;
+}
+
 @media (min-width:992px) { 
     #answer-frame {
+        text-align: left;
         height: 150px;
     }
 }

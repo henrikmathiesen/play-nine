@@ -1,3 +1,7 @@
+#stars-frame {
+    text-align: center;
+}
+
 #stars-frame .glyphicon-star {
     font-size: 40px;
 }
@@ -15,6 +19,7 @@
 @media (min-width:992px) { 
     #stars-frame {
         height: 150px;
+        text-align: left;
     }
 
     #stars-frame .glyphicon-star {
