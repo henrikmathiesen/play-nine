@@ -6,8 +6,6 @@ class Utils {
     }
 
     static possibleCombinationSum(arr, n) {
-        console.log("x");
-
         if (arr.indexOf(n) >= 0) { return true; }
         if (arr[0] > n) { return false; }
         if (arr[arr.length - 1] > n) {

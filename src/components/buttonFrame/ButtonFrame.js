@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './button-frame.css';
 
 class ButtonFrame extends Component {
+
+    componentWillMount(){
+        this.origRedrawCount = this.props.redrawCount;
+    }
+
     render() {
         let button;
         let checkButtonIsDisabled;
@@ -20,7 +25,7 @@ class ButtonFrame extends Component {
                 break;
         } 
 
-        redrawButtonIsDisabled = this.props.redrawCount < 1;
+        redrawButtonIsDisabled = (this.props.redrawCount < 1) || (this.props.doneStatus !== null); 
 
         return (
             <div id="button-frame">
@@ -28,7 +33,7 @@ class ButtonFrame extends Component {
                     {button}
                     <button className="btn btn-warning btn-block" onClick={this.props.onRedraw} disabled={redrawButtonIsDisabled}>
                         <span className="glyphicon glyphicon-refresh"></span>
-                        <span className="redraws"> {this.props.redrawCount} / 5</span>
+                        <span className="redraws"> {this.props.redrawCount} / {this.origRedrawCount}</span>
                     </button>
                 </div>
             </div>

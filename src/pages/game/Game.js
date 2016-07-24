@@ -75,7 +75,7 @@ class Game extends Component {
     handleRedraw() {
         let redrawCount = this.state.redrawCount;
 
-        if (redrawCount > 0) {
+        if ((redrawCount > 0) && (this.state.doneStatus === null)) {
             this.setState({
                 numberOfStars: Utils.randomNumber(),
                 correct: null,
@@ -143,7 +143,7 @@ class Game extends Component {
                         <StarsFrame numberOfStars={numberOfStars} />
                     </div>
                     <div className="col-md-2">
-                        <ButtonFrame selectedNumbers={selectedNumbers} correct={correct} onCheckAnswer={this.handlecheckAnswer} onAcceptAnswer={this.handleAcceptAnswer} onRedraw={this.handleRedraw} redrawCount={redrawCount} />
+                        <ButtonFrame selectedNumbers={selectedNumbers} correct={correct} onCheckAnswer={this.handlecheckAnswer} onAcceptAnswer={this.handleAcceptAnswer} onRedraw={this.handleRedraw} redrawCount={redrawCount} doneStatus={doneStatus} />
                     </div>
                     <div className="col-md-5">
                         <AnswerFrame selectedNumbers={selectedNumbers} onUnSelectNumber={this.handleUnSelectNumber} />
