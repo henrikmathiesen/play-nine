@@ -18,6 +18,7 @@ class Game extends Component {
         this.handleAcceptAnswer = this.handleAcceptAnswer.bind(this);
         this.handleRedraw = this.handleRedraw.bind(this);
         this.updateDoneStatus = this.updateDoneStatus.bind(this);
+        this.handleResetGame = this.handleResetGame.bind(this);
 
         this.state = {
             numberOfStars: Utils.randomNumber(),
@@ -85,14 +86,13 @@ class Game extends Component {
     }
 
     possibleSolutions() {
-
         let numberOfStars = this.state.numberOfStars;
         let usedNumbers = this.state.usedNumbers;
         let possibleNumbers = [];
 
         // If number is not in usedNumbers then it is a possible number
         for (let index = 1; index <= 9; index++) {
-            if(usedNumbers.indexOf(index) < 0) {
+            if (usedNumbers.indexOf(index) < 0) {
                 possibleNumbers.push(index);
             }
         }
@@ -113,6 +113,17 @@ class Game extends Component {
         }
     }
 
+    handleResetGame() {
+        this.setState({
+            numberOfStars: Utils.randomNumber(),
+            selectedNumbers: [],
+            usedNumbers: [],
+            correct: null,
+            redrawCount: 5,
+            doneStatus: null
+        });
+    }
+
     render() {
         let selectedNumbers = this.state.selectedNumbers;
         let usedNumbers = this.state.usedNumbers;
@@ -123,7 +134,7 @@ class Game extends Component {
 
         let bottomFrame = (doneStatus === null) ?
             (<NumbersFrame selectedNumbers={selectedNumbers} usedNumbers={usedNumbers} onSelectNumber={this.handleSelectNumber} />) :
-            (<DoneFrame doneStatus={doneStatus} />);
+            (<DoneFrame doneStatus={doneStatus} onResetGame={this.handleResetGame} />);
 
         return (
             <div>
