@@ -7,25 +7,23 @@
     overflow: hidden;
 }
 
- 
 #rules-alert h2 {
     font-size: 18px;
     margin-top: 0;
     margin-bottom: 0;
     position: relative;
-    top: 2px;
+    top: 4px;
+}
+
+#rules-alert.alert-collpase h2 {
+    opacity: 0.25;
+    top: -4px;
 }
 
 #rules-alert h2 strong {
     position: relative;
     left:20px;
 }
-
-#rules-alert.alert-collpase h2 {
-    top:-10px;
-    opacity: 0.25;
-}
-
 
 @media (min-width:992px) { 
     #rules-alert {
@@ -34,5 +32,10 @@
 
     #rules-alert h2 {
         font-size: 30px;
+        top: 2px;
+    }
+
+    #rules-alert.alert-collpase h2 {
+        top:-10px;
     }
 }
