@@ -5,3 +5,10 @@
 button {
     outline: 0!important;
 }
+
+/* Up to, but not including, iPhone 6 width */
+@media (max-width:374px) {
+    .well {
+        padding: 18px;
+    }
+}
