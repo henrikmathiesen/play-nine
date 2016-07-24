@@ -10,3 +10,21 @@
     margin-left: 8px;
     margin-right: 8px;
 }
+
+@media (max-width:400px) {
+
+    #stars-frame .glyphicon-star {
+        font-size: 40px;
+    }
+
+    #stars-frame .glyphicon-star {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    #stars-frame .stars {
+        position: relative;
+        top:6px;
+    }
+
+}

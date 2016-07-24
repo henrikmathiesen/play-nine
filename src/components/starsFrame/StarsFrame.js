@@ -11,7 +11,9 @@ class StarsFrame extends Component {
 
         return(
             <div id="stars-frame" className="well well-lg">
-                {stars}
+                <div className="stars">
+                    {stars}
+                </div>
             </div>
         );
     }
