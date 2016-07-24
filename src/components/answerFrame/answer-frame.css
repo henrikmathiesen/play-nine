@@ -1,5 +1,6 @@
 #answer-frame {
     text-align: center;
+    min-height: 92px;
 }
 
 #answer-frame .number {
