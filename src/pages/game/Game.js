@@ -21,7 +21,7 @@ class Game extends Component {
         this.handleResetGame = this.handleResetGame.bind(this);
 
         this.state = {
-            numberOfStars: Utils.randomNumber(),
+            numberOfStars: 9, // Utils.randomNumber(),
             selectedNumbers: [],
             usedNumbers: [],
             correct: null,

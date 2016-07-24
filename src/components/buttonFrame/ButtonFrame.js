@@ -29,12 +29,16 @@ class ButtonFrame extends Component {
 
         return (
             <div id="button-frame">
-                <div className="buttons">
-                    {button}
-                    <button className="btn btn-warning btn-block" onClick={this.props.onRedraw} disabled={redrawButtonIsDisabled}>
-                        <span className="glyphicon glyphicon-refresh"></span>
-                        <span className="redraws"> {this.props.redrawCount} / {this.origRedrawCount}</span>
-                    </button>
+                <div className="buttons rows">
+                    <div className="col-md-12 col-sm-8 col-xs-8">
+                        {button}
+                    </div>
+                    <div className="col-md-12 col-sm-4 col-xs-4">
+                        <button className="btn btn-warning btn-block" onClick={this.props.onRedraw} disabled={redrawButtonIsDisabled}>
+                            <span className="glyphicon glyphicon-refresh"></span>
+                            <span className="redraws"> {this.props.redrawCount} / {this.origRedrawCount}</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         );

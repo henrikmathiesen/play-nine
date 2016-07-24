@@ -10,6 +10,11 @@
     margin-top: -57px;
 }
 
+#button-frame .buttons > div {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 #button-frame .btn-success,
 #button-frame .btn-danger,
 #button-frame .btn-primary {
