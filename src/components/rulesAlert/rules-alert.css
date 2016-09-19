@@ -1,8 +1,10 @@
 #rules-alert {
+    min-height: 206px;
     margin-bottom:10px;
 }
 
 #rules-alert.alert-collpase {
+    min-height: initial;
     height: 40px;
     overflow: hidden;
 }
