@@ -24,7 +24,7 @@ class RulesAlert extends Component {
         return(
             <div id="rules-alert" className={alertClasses}>
                 <button type="button" className="close" onClick={this.handleCollapse}><span className={buttonClasses}></span></button>
-                <div className="text-center">
+                <div className="text-center" onClick={this.handleCollapse}>
                     <h2 className="text-uppercase"><strong>Rules</strong></h2>
                     <hr />
                 </div>

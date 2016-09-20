@@ -17,6 +17,10 @@
     top: 4px;
 }
 
+#leader-board-alert div.text-center {
+    cursor:pointer;
+}
+
 #leader-board-alert ul {
     list-style-type: none;
     margin: 0;

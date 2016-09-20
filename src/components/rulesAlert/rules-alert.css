@@ -17,6 +17,10 @@
     top: 4px;
 }
 
+#rules-alert div.text-center {
+    cursor:pointer;
+}
+
 #rules-alert.alert-collpase h2 {
     opacity: 0.25;
     top: -4px;
