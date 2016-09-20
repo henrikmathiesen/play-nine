@@ -19,11 +19,11 @@ class RulesAlert extends Component {
 
     render(){
         let alertClasses = 'alert alert-success alert-dismissible' + (!this.state.isVisible ? ' alert-collpase' : '');
-        let buttonClasses = this.state.isVisible ? 'glyphicon glyphicon-chevron-up' : 'glyphicon glyphicon-chevron-down'; 
+        let buttonClasses = 'close glyphicon' + (this.state.isVisible ? ' glyphicon-chevron-up' : ' glyphicon-chevron-down'); 
 
         return(
             <div id="rules-alert" className={alertClasses}>
-                <button type="button" className="close" onClick={this.handleCollapse}><span className={buttonClasses}></span></button>
+                <span onClick={this.handleCollapse} className={buttonClasses}></span>
                 <div className="text-center" onClick={this.handleCollapse}>
                     <h2 className="text-uppercase"><strong>Rules</strong></h2>
                     <hr />

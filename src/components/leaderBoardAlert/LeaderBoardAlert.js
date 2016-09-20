@@ -19,11 +19,11 @@ class LeaderBoardAlert extends Component {
 
     render() {
         let alertClasses = 'alert alert-warning alert-dismissible' + (!this.state.isVisible ? ' alert-collpase' : '');
-        let buttonClasses = this.state.isVisible ? 'glyphicon glyphicon-chevron-up' : 'glyphicon glyphicon-chevron-down';
+        let buttonClasses = 'close glyphicon' + (this.state.isVisible ? ' glyphicon-chevron-up' : ' glyphicon-chevron-down');
 
         return (
             <div id="leader-board-alert" className={alertClasses}>
-                <button type="button" className="close" onClick={this.handleCollapse}><span className={buttonClasses}></span></button>
+                <span className={buttonClasses} onClick={this.handleCollapse}></span>
                 <div className="text-center" onClick={this.handleCollapse}>
                     <h2 className="text-uppercase"><strong>Leader Board</strong></h2>
                     <hr />
