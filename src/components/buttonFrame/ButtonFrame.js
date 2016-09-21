@@ -14,7 +14,7 @@ class ButtonFrame extends Component {
 
         switch (this.props.correct) {
             case true:
-                button = <button className="btn btn-success btn-block" onClick={this.props.onAcceptAnswer}><span className="glyphicon glyphicon-ok"></span></button>
+                button = <button className="btn btn-success btn-block" onClick={this.props.onAcceptAnswer}><span className="glyphicon glyphicon-ok"><smal>Accept?</smal></span></button>
                 break;
             case false:
                 button = <button className="btn btn-danger btn-block"><span className="glyphicon glyphicon-remove"></span></button>
