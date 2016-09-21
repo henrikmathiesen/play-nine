@@ -33,7 +33,7 @@ class RulesAlert extends Component {
                         You get a random number of stars between 1 and 9.
                         And you have a set of numbers in the bottom frame that you can use.
                         You can select <em>one or more</em> numbers that sum up to the value of the random stars.
-                        Check your answer and then accept it.
+                        Check your answer and <em>then accept it</em>.
                     </p>
                     <p>
                         The objective is to use all the numbers in the bottom frame.
