@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "copyfiles": "^1.0.0",
     "react-scripts": "0.1.0"
   },
   "dependencies": {
@@ -13,7 +14,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build && npm run copy-touch-icon",
+    "eject": "react-scripts eject",
+    "copy-touch-icon": "copyfiles apple-touch-icon.png build"
   }
 }
