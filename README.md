@@ -1,6 +1,5 @@
 # playNine
 A fun math game, built with React, ES6
-
 https://henrikmathiesen.github.io/playNine/
 
 App created from Facebooks create-react-app npm package
