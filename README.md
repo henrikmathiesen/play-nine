@@ -1,4 +1,4 @@
-# playNine
+# Play Nine
 A fun math game, built with React, ES6  
 https://henrikmathiesen.github.io/playNine/
 
