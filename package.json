@@ -1,6 +1,7 @@
 {
   "name": "play-nine",
   "version": "0.0.1",
+  "homepage": "http://henrikmathiesen.github.io/play-nine",
   "private": true,
   "devDependencies": {
     "copyfiles": "1.0.0",
