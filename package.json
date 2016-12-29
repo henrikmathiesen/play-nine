@@ -1,16 +1,16 @@
 {
-  "name": "playNine",
+  "name": "play-nine",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "copyfiles": "^1.0.0",
+    "copyfiles": "1.0.0",
     "react-scripts": "0.1.0"
   },
   "dependencies": {
-    "fastclick": "^1.0.6",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
-    "underscore": "^1.8.3"
+    "fastclick": "1.0.6",
+    "react": "15.2.1",
+    "react-dom": "15.2.1",
+    "underscore": "1.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
