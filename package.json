@@ -4,19 +4,19 @@
   "homepage": "http://henrikmathiesen.github.io/play-nine",
   "private": true,
   "devDependencies": {
-    "copyfiles": "1.0.0",
-    "react-scripts": "0.1.0"
+    "gh-pages": "^1.0.0",
+    "react-scripts": "0.8.5"
   },
   "dependencies": {
     "fastclick": "1.0.6",
-    "react": "15.2.1",
-    "react-dom": "15.2.1",
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
     "underscore": "1.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run copy-touch-icon",
-    "eject": "react-scripts eject",
-    "copy-touch-icon": "copyfiles apple-touch-icon.png build"
+    "build": "react-scripts build",
+    "deploy": "npm run build&&gh-pages -d build",
+    "clean-gh-pages": "rm -rf node_modules/gh-pages/.cache"
   }
 }
