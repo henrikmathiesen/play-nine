@@ -5,6 +5,16 @@ class Utils {
         return _.random(1, 9);
     }
 
+    static randomNumberNotSame(prevRandom) {
+        let newRandom = _.random(1,9);
+
+        while(prevRandom === newRandom) {
+            newRandom = _.random(1,9);
+        }
+
+        return newRandom;
+    }
+
     static possibleCombinationSum(arr, n) {
         if (arr.indexOf(n) >= 0) { return true; }
         if (arr[0] > n) { return false; }

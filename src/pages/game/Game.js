@@ -76,8 +76,9 @@ class Game extends Component {
         let redrawCount = this.state.redrawCount;
 
         if ((redrawCount > 0) && (this.state.doneStatus === null)) {
+            let prevRandomNumber = this.state.numberOfStars;
             this.setState({
-                numberOfStars: Utils.randomNumber(),
+                numberOfStars: Utils.randomNumberNotSame(prevRandomNumber),
                 correct: null,
                 selectedNumbers: [],
                 redrawCount: redrawCount - 1
