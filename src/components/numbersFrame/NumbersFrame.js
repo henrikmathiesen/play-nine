@@ -20,6 +20,7 @@ class NumbersFrame extends Component {
             numbers.push(<div key={index} className={className} onClick={this.props.onSelectNumber.bind(null, index) }>{index}</div>);
         }
 
+        // Not optimal using id as css scoping, since id:s should be unique, and components can be reused (in the same view)
         return (
             <div id="numbers-frame" className="well well-lg text-center">
                 {numbers}

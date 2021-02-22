@@ -21,6 +21,7 @@ class RulesAlert extends Component {
         let alertClasses = 'alert alert-success alert-dismissible' + (!this.state.isVisible ? ' alert-collpase' : '');
         let buttonClasses = 'close glyphicon' + (this.state.isVisible ? ' glyphicon-chevron-up' : ' glyphicon-chevron-down'); 
 
+        // Not optimal using id as css scoping, since id:s should be unique, and components can be reused (in the same view)
         return(
             <div id="rules-alert" className={alertClasses}>
                 <span onClick={this.handleCollapse} className={buttonClasses}></span>

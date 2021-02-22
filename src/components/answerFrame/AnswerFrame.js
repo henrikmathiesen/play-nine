@@ -13,6 +13,7 @@ class AnswerFrame extends Component {
             </div>);
         }
 
+        // Not optimal using id as css scoping, since id:s should be unique, and components can be reused (in the same view)
         return (
             <div id="answer-frame" className="well well-lg">
                 {numbers}

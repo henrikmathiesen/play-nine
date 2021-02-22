@@ -27,6 +27,7 @@ class ButtonFrame extends Component {
 
         redrawButtonIsDisabled = (this.props.redrawCount < 1) || (this.props.doneStatus !== null); 
 
+        // Not optimal using id as css scoping, since id:s should be unique, and components can be reused (in the same view)
         return (
             <div id="button-frame">
                 <div className="buttons row">
