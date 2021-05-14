@@ -1,6 +1,5 @@
 {
     "icons": [
-        { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
-    ],
-    "background_color":"#F5F5F5"
+        { "src": "192.png", "type": "image/png", "sizes": "192x192" }
+    ]
 }
